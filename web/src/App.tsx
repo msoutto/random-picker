@@ -1,14 +1,12 @@
-import { useState } from 'react'
+import { Bucket } from './components/Bucket'
 
 export function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className='flex gap-2'>
-      <h1>Hello Random Picker</h1>
+    <div className="flex gap-2">
+      <Bucket />
       <button className="button">Default</button>
     </div>
   )
 }
 
-export default App
+export default App;
