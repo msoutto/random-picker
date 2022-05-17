@@ -7,5 +7,5 @@ body {
 }
 
 .button {
-    @apply bg-blue-500 px-4 h-10 rounded text-blue-100 hover:bg-blue-700 transition-colors;
+    @apply bg-blue-600 px-4 h-10 rounded text-blue-100 hover:bg-blue-700 transition-colors;
 }
