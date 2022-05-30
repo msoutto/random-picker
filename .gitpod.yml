@@ -1,0 +1,14 @@
+tasks:
+  - name: Dependencies
+    init: |
+      cd ../web
+      npm install
+
+  - name: Front End
+    command: |
+      cd ./web
+      npm run dev
+
+ports:
+  - port: 3000
+    onOpen: open-browser
