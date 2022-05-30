@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { AddForm } from './components/AddForm';
 import { Bucket } from './components/Bucket'
+import { PickRandomButton } from './components/PickRandomButton';
 
 export function App() {
   const [items, setItems] = useState(['Teste 1', 'Teste 2', 'Teste 3']);
@@ -14,7 +15,7 @@ export function App() {
       <div className="flex flex-col w-[75%]">
         <AddForm addToBucket={addToBucket} />
         <Bucket items={items} />
-        <button className="button">Pick random</button>
+        <PickRandomButton items={items} />
       </div>
     </div>
   );
