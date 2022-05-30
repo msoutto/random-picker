@@ -10,6 +10,7 @@ export function AddForm({ addToBucket }: AddFormProps) {
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault();
         addToBucket(item);
+        setItem('');
     }
 
     return (
@@ -18,9 +19,10 @@ export function AddForm({ addToBucket }: AddFormProps) {
             onSubmit={handleSubmit}
         >
             <input 
-                className="left-2 w-[75%] rounded p-1 text-zinc-700 bg-zinc-200"
+                className="left-2 w-[75%] rounded p-1 text-zinc-700 bg-zinc-100"
                 placeholder="Add to bucket..."
                 onChange={event => setItem(event.target.value)}
+                value={item}
             ></input>
             <button type="submit" className="button right-5 w-[15%]">Add</button>
         </form>
