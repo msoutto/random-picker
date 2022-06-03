@@ -21,12 +21,16 @@ export function App() {
     }
   }
 
+  const onCloseModal = () => {
+    setIsModalOpen(false);
+  }
+
   const removePickedItem = () => {
     let newItems = [...items];
     newItems.splice(pickedItem, 1);
     console.log(pickedItem, newItems);
     setItems(newItems);
-    setIsModalOpen(false);
+    onCloseModal();
   }
 
   return (
@@ -37,7 +41,7 @@ export function App() {
         <PickRandomButton items={items} pickItem={pickItem} />
         <PickedModal 
           isOpen={isModalOpen} 
-          onClose={() => setIsModalOpen(false)} 
+          onClose={onCloseModal} 
           removeItem={removePickedItem}
           />
       </div>
