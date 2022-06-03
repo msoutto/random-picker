@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { AddForm } from './components/AddForm';
 import { Bucket } from './components/Bucket'
+import { PickedModal } from './components/modals/PickedModal';
 import { PickRandomButton } from './components/PickRandomButton';
 
 export function App() {
   const [items, setItems] = useState(['Teste 1', 'Teste 2', 'Teste 3']);
-  const [pickedItem, setPickedItem] = useState<number>();
+  const [pickedItem, setPickedItem] = useState<number>(-1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const addToBucket = (item: string) => {
     setItems([...items, item]);
@@ -15,7 +17,16 @@ export function App() {
     if (index >= 0) {
       setPickedItem(index);
       console.log(index, items[index]);
+      setIsModalOpen(true);
     }
+  }
+
+  const removePickedItem = () => {
+    let newItems = [...items];
+    newItems.splice(pickedItem, 1);
+    console.log(pickedItem, newItems);
+    setItems(newItems);
+    setIsModalOpen(false);
   }
 
   return (
@@ -24,6 +35,11 @@ export function App() {
         <AddForm addToBucket={addToBucket} />
         <Bucket items={items} />
         <PickRandomButton items={items} pickItem={pickItem} />
+        <PickedModal 
+          isOpen={isModalOpen} 
+          onClose={() => setIsModalOpen(false)} 
+          removeItem={removePickedItem}
+          />
       </div>
     </div>
   );
