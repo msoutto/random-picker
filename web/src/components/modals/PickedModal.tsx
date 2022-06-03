@@ -15,20 +15,23 @@ export function PickedModal({ isOpen, onClose, removeItem }: PickedModalProps) {
         return null;
     
     return ReactDOM.createPortal(
-        <div>
-            <button onClick={onClose}>X</button>
-            <div className="title">
+        <>
+            <div id="overlay" className="fixed top-0 left-0 right-0 bottom-0 bg-black/70"></div>
+            <div id="modal" className="fixed top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] p-6 z-50 bg-zinc-800 text-zinc-100 rounded">
+                <button onClick={onClose}>X</button>
+                <div className="title">
 
+                </div>
+                <div className="body">
+                    <p>
+                        Do you wish to remove the picked item from the bucket?
+                    </p>
+                </div>
+                <div className="footer">
+                    <button className="button" onClick={onClose}>No</button>
+                    <button className="button" onClick={removeItem}>Yes</button>
+                </div>
             </div>
-            <div className="body">
-                <p>
-                    Do you wish to remove the picked item from the bucket?
-                </p>
-            </div>
-            <div className="footer">
-                <button onClick={onClose}>No</button>
-                <button onClick={removeItem}>Yes</button>
-            </div>
-        </div>
+        </>
     , modalRoot);
 }
