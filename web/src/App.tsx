@@ -41,6 +41,7 @@ export function App() {
         <PickRandomButton items={items} pickItem={pickItem} />
         <PickedModal 
           isOpen={isModalOpen} 
+          item={items[pickedItem]}
           onClose={onCloseModal} 
           removeItem={removePickedItem}
           />
