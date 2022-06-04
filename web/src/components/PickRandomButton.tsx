@@ -15,9 +15,11 @@ export function PickRandomButton({ items, pickItem }: PickRandomButtonProps) {
     }
 
     return (
-        <button 
-            className="button"
-            onClick={pickRandom}
-        >Pick random</button>
+        <div className="flex justify-center items-center mx-4">
+            <button 
+                className="button w-full"
+                onClick={pickRandom}
+            >Pick random</button>
+        </div>
     );
 }
