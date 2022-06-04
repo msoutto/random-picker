@@ -32,8 +32,8 @@ export function PickedModal({ isOpen, item, onClose, removeItem }: PickedModalPr
                         </p>
                     </div>
                     <footer className="flex mt-2 gap-6">
-                        <button className="cancel-button" onClick={onClose}>No</button>
-                        <button className="button" onClick={removeItem}>Yes</button>
+                        <button className="button" onClick={onClose}>No</button>
+                        <button className="cancel-button" onClick={removeItem}>Yes</button>
                     </footer>
                 </div>
             </div>
