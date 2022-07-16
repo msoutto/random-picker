@@ -12,7 +12,7 @@ interface PickedModalProps {
 // if the app had other kinds of modals, 
 // it would need a separate Modal root component that would handle adding a specific modal (modal child) to DOM
 export function PickedModal({ isOpen, item, onClose, removeItem }: PickedModalProps) {
-    if (!modalRoot || !isOpen)
+    if (!(modalRoot && isOpen))
         return null;
     
     return ReactDOM.createPortal(
@@ -23,7 +23,7 @@ export function PickedModal({ isOpen, item, onClose, removeItem }: PickedModalPr
                     <b className="flex justify-center items-center">X</b>
                 </button>
                 <div className="flex flex-col items-center mt-5 gap-1">
-                    <div className="title text-center w-full">
+                    <div className="title text-center text-xl w-full">
                         You picked <b>{item}</b>!
                     </div>
                     <div className="body">
@@ -32,8 +32,8 @@ export function PickedModal({ isOpen, item, onClose, removeItem }: PickedModalPr
                         </p>
                     </div>
                     <footer className="flex mt-2 gap-6">
-                        <button className="button" onClick={onClose}>No</button>
-                        <button className="cancel-button" onClick={removeItem}>Yes</button>
+                        <button className="button px-4" onClick={onClose}>No</button>
+                        <button className="cancel-button px-4" onClick={removeItem}>Yes</button>
                     </footer>
                 </div>
             </div>
