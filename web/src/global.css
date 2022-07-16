@@ -7,9 +7,9 @@ body {
 }
 
 .button {
-    @apply bg-blue-600 px-4 h-8 rounded text-blue-100 hover:bg-blue-700 transition-colors;
+    @apply bg-blue-600 h-8 rounded text-blue-100 hover:bg-blue-700 transition-colors;
 }
 
 .cancel-button {
-    @apply bg-red-600 px-4 h-8 rounded text-red-100 hover:bg-red-700 transition-colors;
+    @apply bg-red-600 h-8 rounded text-red-100 hover:bg-red-700 transition-colors;
 }
