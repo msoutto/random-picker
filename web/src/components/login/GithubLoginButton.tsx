@@ -1,7 +1,6 @@
 interface GithubLoginButtonProps {
     authorizeUrl: string;
     clientId: string;
-    pickItem: (index: number) => void
 }
 
 export function GithubLoginButton({ authorizeUrl, clientId }: GithubLoginButtonProps) {
