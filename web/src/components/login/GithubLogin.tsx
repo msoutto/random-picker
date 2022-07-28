@@ -1,9 +1,9 @@
-interface GithubLoginButtonProps {
+interface GithubLoginProps {
     authorizeUrl: string;
     clientId: string;
 }
 
-export function GithubLoginButton({ authorizeUrl, clientId }: GithubLoginButtonProps) {
+export function GithubLogin({ authorizeUrl, clientId }: GithubLoginProps) {
     const callAuthorize = async () => {
         const response = await fetch(`${authorizeUrl}?client_id=${clientId}`, {
             method: 'GET',
