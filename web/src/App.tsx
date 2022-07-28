@@ -4,6 +4,8 @@ import { Bucket } from './components/Bucket'
 import { PickedModal } from './components/modals/PickedModal';
 import { PickRandomButton } from './components/PickRandomButton';
 
+const AUTH_URL = "https://github.com/login/oauth/authorize";
+
 export function App() {
   const [items, setItems] = useState(['Teste 1', 'Teste 2', 'Teste 3']);
   const [pickedItem, setPickedItem] = useState<number>(-1);
